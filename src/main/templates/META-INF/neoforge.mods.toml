@@ -13,7 +13,7 @@ Adds the Warden Battle Axe: 12 damage, 0.7 attack speed. Only 3 can ever drop fr
 [[dependencies.${mod_id}]]
 modId="neoforge"
 type="required"
-versionRange="[${neo_version},)"
+versionRange="[26.2,)"
 ordering="NONE"
 side="BOTH"
 
