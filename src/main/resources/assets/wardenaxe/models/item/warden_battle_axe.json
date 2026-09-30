@@ -1,0 +1,4 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": { "layer0": "wardenaxe:item/warden_battle_axe" }
+}
