@@ -5,11 +5,11 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.LevelResource;
@@ -23,7 +23,7 @@ public class WardenDropHandler {
     private static final int MAX_AXES = 3;
 
     public static void onLivingDrops(LivingDropsEvent event) {
-        if (event.getEntity().getType() != EntityType.WARDEN) return;
+        if (!BuiltInRegistries.ENTITY_TYPE.getKey(event.getEntity().getType()).toString().equals("minecraft:warden")) return;
         if (!(event.getSource().getEntity() instanceof ServerPlayer)) return;
         if (!(event.getEntity().level() instanceof ServerLevel level)) return;
 
