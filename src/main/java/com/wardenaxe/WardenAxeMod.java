@@ -14,6 +14,7 @@ public class WardenAxeMod {
         ModItems.ITEMS.register(modEventBus);
         modEventBus.addListener(WardenAxeMod::addCreative);
         NeoForge.EVENT_BUS.addListener(WardenDropHandler::onLivingDrops);
+        NeoForge.EVENT_BUS.addListener(SheepQuestHandler::onSheepDeath);
     }
 
     private static void addCreative(BuildCreativeModeTabContentsEvent event) {
