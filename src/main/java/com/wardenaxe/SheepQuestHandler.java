@@ -17,13 +17,14 @@ import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 /**
  * Counts how many sheep each player has killed (saved per player in the world folder, in "wardenaxe_sheep").
  * Shows "N/50 sheep killed" above the hotbar after each kill.
- * Stage 3 will spawn the boss sheep when the count reaches 50.
+ * Reaching 50 spawns the boss sheep (see SheepBossHandler).
  */
 public class SheepQuestHandler {
     public static final int GOAL = 50;
 
     public static void onSheepDeath(LivingDeathEvent event) {
         if (!BuiltInRegistries.ENTITY_TYPE.getKey(event.getEntity().getType()).toString().equals("minecraft:sheep")) return;
+        if (SheepBossHandler.isBoss(event.getEntity())) return;
         if (!(event.getSource().getEntity() instanceof ServerPlayer player)) return;
         if (!(event.getEntity().level() instanceof ServerLevel level)) return;
 
@@ -33,9 +34,17 @@ public class SheepQuestHandler {
 
         if (count >= GOAL) {
             writeCount(server, id, 0);
+<<<<<<< HEAD
+            player.sendOverlayMessage(
+                    Component.literal(GOAL + "/" + GOAL + " sheep killed! The boss sheep has appeared!")
+                            .withStyle(ChatFormatting.GOLD));
+            SheepBossHandler.spawnBoss(level,
+                    event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ());
+=======
             player.sendOverlayMessage(
                     Component.literal(GOAL + "/" + GOAL + " sheep killed!").withStyle(ChatFormatting.GOLD));
             // Stage 3: the boss sheep will spawn here.
+>>>>>>> b857bd664ae2e6a4b45535ec32047b472cf5d23e
         } else {
             writeCount(server, id, count);
             player.sendOverlayMessage(
