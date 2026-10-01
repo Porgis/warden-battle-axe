@@ -18,4 +18,10 @@ public class ModItems {
                     .axe(ToolMaterial.NETHERITE, 7.0F, -3.3F)
                     .rarity(Rarity.RARE)
                     .fireResistant()));
+
+    public static final DeferredItem<Item> SHEEP_CRACKER_9000 = ITEMS.registerItem(
+            "sheep_cracker_9000",
+            props -> new SheepCrackerItem(props
+                    .stacksTo(1)
+                    .rarity(Rarity.EPIC)));
 }
