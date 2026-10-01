@@ -34,17 +34,11 @@ public class SheepQuestHandler {
 
         if (count >= GOAL) {
             writeCount(server, id, 0);
-<<<<<<< HEAD
             player.sendOverlayMessage(
                     Component.literal(GOAL + "/" + GOAL + " sheep killed! The boss sheep has appeared!")
                             .withStyle(ChatFormatting.GOLD));
             SheepBossHandler.spawnBoss(level,
                     event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ());
-=======
-            player.sendOverlayMessage(
-                    Component.literal(GOAL + "/" + GOAL + " sheep killed!").withStyle(ChatFormatting.GOLD));
-            // Stage 3: the boss sheep will spawn here.
->>>>>>> b857bd664ae2e6a4b45535ec32047b472cf5d23e
         } else {
             writeCount(server, id, count);
             player.sendOverlayMessage(
