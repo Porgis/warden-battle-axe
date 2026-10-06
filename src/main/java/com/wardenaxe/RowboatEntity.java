@@ -16,4 +16,10 @@ public class RowboatEntity extends AbstractChestBoat {
     protected double rideHeight(EntityDimensions dimensions) {
         return dimensions.height() / 3.0F;
     }
+
+    /** Vanilla chest boats only seat 1; the Rowboat seats 2. */
+    @Override
+    protected int getMaxPassengers() {
+        return 2;
+    }
 }
