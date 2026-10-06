@@ -1,7 +1,6 @@
 package com.wardenaxe;
 
 import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.model.object.boat.BoatModel;
 import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.resources.Identifier;
 import net.neoforged.api.distmarker.Dist;
@@ -21,7 +20,7 @@ public class ClientSetup {
 
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(ROWBOAT_LAYER, BoatModel::createChestBoatModel);
+        event.registerLayerDefinition(ROWBOAT_LAYER, RowboatModel::createLayer);
     }
 
     @SubscribeEvent
