@@ -1,5 +1,6 @@
 package com.wardenaxe;
 
+import net.minecraft.world.item.BoatItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ToolMaterial;
@@ -24,4 +25,8 @@ public class ModItems {
             props -> new SheepCrackerItem(props
                     .stacksTo(1)
                     .rarity(Rarity.EPIC)));
+
+    public static final DeferredItem<Item> ROWBOAT = ITEMS.registerItem(
+            "rowboat",
+            props -> new BoatItem(ModEntities.ROWBOAT.get(), props.stacksTo(1)));
 }

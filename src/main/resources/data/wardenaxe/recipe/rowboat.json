@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": ["PBP"],
+  "key": {
+    "P": "#minecraft:planks",
+    "B": "#minecraft:boats"
+  },
+  "result": {
+    "id": "wardenaxe:rowboat",
+    "count": 1
+  }
+}

@@ -1,4 +1,6 @@
 {
   "item.wardenaxe.warden_battle_axe": "Warden Battle Axe",
-  "item.wardenaxe.sheep_cracker_9000": "Sheep Cracker 9000"
+  "item.wardenaxe.sheep_cracker_9000": "Sheep Cracker 9000",
+  "item.wardenaxe.rowboat": "Rowboat",
+  "entity.wardenaxe.rowboat": "Rowboat"
 }

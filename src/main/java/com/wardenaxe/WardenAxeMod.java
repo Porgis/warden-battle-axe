@@ -12,6 +12,7 @@ public class WardenAxeMod {
 
     public WardenAxeMod(IEventBus modEventBus) {
         ModItems.ITEMS.register(modEventBus);
+        ModEntities.ENTITY_TYPES.register(modEventBus);
         modEventBus.addListener(WardenAxeMod::addCreative);
         NeoForge.EVENT_BUS.addListener(WardenDropHandler::onLivingDrops);
         NeoForge.EVENT_BUS.addListener(SheepQuestHandler::onSheepDeath);
@@ -23,6 +24,9 @@ public class WardenAxeMod {
         if (event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(ModItems.WARDEN_BATTLE_AXE);
             event.accept(ModItems.SHEEP_CRACKER_9000);
+        }
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.ROWBOAT);
         }
     }
 }
